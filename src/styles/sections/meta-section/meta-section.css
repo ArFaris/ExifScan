@@ -1,0 +1,21 @@
+.meta-section {
+    width: 34rem;
+    display: flex;
+    flex-direction: row;
+    gap: 2.4rem;
+    margin-bottom: 2.5rem;
+    margin-inline: auto;
+}
+
+.meta-info {
+    width: 10rem;
+    height: 23rem;
+    overflow-y: scroll;
+    overscroll-behavior: contain;
+}
+
+.meta-info li {
+    font-size: var(--font-size-xs);
+    margin-bottom: 1.4rem;
+    padding-right: 0.8rem;
+}

@@ -1,0 +1,21 @@
+.time {
+    background: var(--button-gradient-primary);
+    border-radius: var(--border-radius-lg);
+    width: 21rem;
+    padding: 0.8rem;
+    margin-inline: auto;
+}
+
+.time-points {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.time-point {
+    background-color: #2a3727A6;
+    border-radius: var(--border-radius);
+    color: var(--text-light);
+    font-size: var(--font-size-xs);
+    padding: 0.5rem;
+}

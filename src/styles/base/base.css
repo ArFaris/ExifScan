@@ -1,0 +1,79 @@
+html {
+    font-family: var(--font-family-primary);
+    font-size: 1.7vw;
+    line-height: 1.5;
+    color: var(--text-dark);
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    background-color: var(--color-background);
+}
+
+body.dark {
+    background-color: var(--color-header);
+}
+
+::-webkit-scrollbar {
+    width: 0.35rem;
+    height: 0.35rem;
+}
+
+::-webkit-scrollbar-track {
+    background: radial-gradient(
+                    circle at center,
+                    #b1e5a699 40%,
+                    #c7f6ca99 92%
+                );
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #aaaaaf66;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-button {
+    display: none;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+.loader.active {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #b1e5a699;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.loader {
+    display: none;
+}
+
+.loader-spin {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--text-dark);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg) };
+    100% { transform: rotate(360deg) };
+}

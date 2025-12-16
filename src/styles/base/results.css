@@ -1,0 +1,49 @@
+.results h2 {
+    font-weight: 400;
+    font-size: var(--font-size-lg);
+    margin-bottom: 1.125rem;
+}
+
+.results h1 {
+    font-size: var(--font-size-2xl);
+    font-weight: 400;
+    line-height: 1.2;
+    width: 11rem;
+    margin-bottom: 1.5rem;
+}
+
+#result-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8rem;
+    height: 2rem;
+    background-color: var(--text-dark);
+    box-shadow: var(--shadow-lg);
+    border-radius: var(--border-radius);
+    color: var(--text-light);
+    font-size: var(--font-size-xs);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+#result-button:hover {
+    background-color: var(--color-hover);
+    transform: translateY(-1px);
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 34rem;
+    height: auto;
+    margin-bottom: 2.3rem;
+    margin-inline: auto;
+    margin-top: 5rem;
+}
+
+#previewImage {
+    border-radius: (--border-radius);
+    height: 100%;
+}

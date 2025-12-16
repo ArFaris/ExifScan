@@ -1,0 +1,37 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    background: rgba(0, 0, 0, 0.9);
+    padding-inline: var(--padding-l);
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-height);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+}
+
+.header.dark {
+    background: radial-gradient(
+        ellipse at center,
+        rgba(42, 55, 39, 0.25) 40%,
+        rgba(199, 246, 202, 0.25) 92%
+    );
+}
+
+.header__logo {
+    height: var(--header-image-height);
+}
+
+@media (max-width: 720px) {
+    .header {
+        padding: 2rem;
+        height: auto;
+    }
+
+    .header__logo {
+        height: 5rem;
+    }
+}

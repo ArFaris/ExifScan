@@ -1,0 +1,36 @@
+.image-preview {
+    position: relative;
+}
+
+.image-preview__photo {
+    position: relative;
+    height: 18rem;
+    filter: var(--image-filter);
+    transition: var(--transition);
+    bottom: 2.8rem;
+}
+
+.image-preview__photo:hover {
+    filter:  var(--image-filter-hover);
+    transform: translateY(-2px);
+}
+
+.image-preview__decoration {
+    position: absolute;
+    width: 18rem;
+    left: -11rem;
+    top: 11rem;
+    z-index: -1; 
+}
+
+@media (max-width: 720px) {
+    .image-preview__photo {
+        height: 40rem;
+        bottom: 0;
+    }
+
+    .image-preview__decoration {
+        width: 35rem;
+        top: 28rem;
+    }
+}

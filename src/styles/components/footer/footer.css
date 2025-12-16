@@ -1,0 +1,37 @@
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: var(--padding-l);
+    height: 1.5rem;
+    background-color: #b1e5a666;
+    bottom: 0;
+    min-width: 100vw;
+    z-index: 1002;
+}
+
+.footer__img {
+    height: var(--header-image-height);
+}
+
+.footer__nav {
+    display: flex;
+    flex-direction: row;
+    gap: 0.8rem;
+}
+
+.footer__link {
+    font-size: var(--font-size-xs);
+    transition: color 0.3s ease;
+}
+
+.footer__link:hover {
+    color: var(--color-hover);
+}
+
+@media (max-width: 720px) {
+    .footer {
+        height: 5rem;
+    }
+}

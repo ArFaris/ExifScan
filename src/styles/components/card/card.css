@@ -1,0 +1,40 @@
+.card {
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 10rem;
+    height: 12rem;
+    background-color: #fff;
+    border-radius: var(--border-radius-lg);
+    padding-bottom: 2.6rem;
+    position: relative;
+}
+
+.card-title {
+    position: absolute;
+    bottom: -0.6rem;
+    font-size: var(--font-size-sm);
+}
+
+.imageName {
+    position: absolute;
+    bottom: 0;
+}
+
+#gps {
+    overflow-y: hidden;
+}
+
+#gps-title {
+    position: absolute;
+    left: 0%;
+    bottom: 30%;
+    z-index: 1000;
+    display: none;
+}
+
+#gps-title.active {
+    display: block;
+}

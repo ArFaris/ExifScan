@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExifScan</title>
+    <link rel="stylesheet" href="./src/styles/main.css">
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <img class="header__logo" src="./assets/LOGO.svg" alt="Логотип"/>
+
+        <nav class="header__nav">
+            <ul class="header__list">
+                <li class="header__item">
+                    <a class="header__link" href="#" data-section="hero">Превью</a>
+                </li>
+                <li class="header__item">
+                    <a class="header__link" href="#" data-section="features">О сервисе</a>
+                </li>
+                <li class="header__item">
+                    <a class="header__link" href="#" data-section="upload-section">Загрузка</a>
+                </li>
+            </ul>
+        </nav>
+
+        <button id="header-button" class="button button--rounded">Начать сейчас</button>
+    </header>
+
+    <!-- Первая страница (загрузка фотографии) -->
+    <main id="upload" class="page active">
+        <section class="hero">
+            <div class="hero__header">
+                <img class="hero__icon" src="./assets/icons/loops.svg" alt="Иконка с лупами"/>
+                <h1 class="hero__title">Извлечение метаданных из фотографий</h1>
+                <button class="button button--rounded">Начать сейчас</button>
+            </div>
+
+            <div class="image-preview">
+                <img class="image-preview__photo" src="./assets/img/photo.png" alt="Фотография"/>
+                <img class="image-preview__decoration" src="./assets/icons/time-line.svg" alt="Иконка"/>
+            </div>
+        </section>
+
+        <section class="upload-section">
+            <div class="upload-container">
+                <div class="gallery">
+                    <img class="gallery__decoration gallery__decoration--type-gps" src="./assets/icons/gps-line.svg" alt="Иконка"/>
+                    <img class="gallery__image gallery__image--order-first" src="./assets/img/mini-photo-board1.png" alt="Фотография"/>
+                    <img class="gallery__decoration gallery__decoration--type-path" src="./assets/icons/path.svg" alt="Иконка"/>
+                    <img class="gallery__image gallery__image--order-second" src="./assets/img/mini-photo-board2.png" alt="Фотография"/>
+                </div>
+
+                <div class="upload__area">
+                    <h2 class="upload__title">Перетащите изображение сюда</h2>
+                    <h3 class="upload__subtitle">или выберите файл для загрузки</h3>
+
+                    <div class="file-input-wrapper">
+                        <input id="file-input" type="file" hidden/>
+                        <label for="file-input" class="file-input-label">Выбрать файлы</label>
+                    </div>
+                </div>
+    
+                <div class="upload__actions">
+                    <button class="button button--pill" disabled>Получить метаданные</button>
+                    <button class="button button--pill">Сбросить файлы</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <h2 class="features__header">Узнайте уникальный отпечаток вашей фотографии</h2>
+
+            <div class="loops__group">
+                <article class="loop__area">
+                    <img class="loop small-loop" src="./assets/img/blurred-glass.png" alt="Размытое изображение"/>
+                    <h3 class="loop text small-text">Общая информация о файле</h3>
+                </article>
+
+                <article class="loop__area">
+                    <img class="loop big-loop" src="./assets/img/large-glass.png" alt="Четкое изображение"/>
+                    <h3 class="loop text big-text">Общая информация о файле</h3> 
+                </article>
+
+                <article class="loop__area">
+                    <img class="loop small-loop" src="./assets/img/blurred-glass.png" alt="Размытое изображение"/>
+                    <h3 class="loop text small-text">Общая информация о файле</h3>
+                </article>
+
+                <article class="loop__area">
+                    <img class="loop small-loop" src="./assets/img/blurred-glass.png" alt="Размытое изображение"/>
+                    <h3 class="loop text small-text">Общая информация о файле</h3>
+                </article>
+
+                <article class="loop__area">
+                    <img class="loop big-loop" src="./assets/img/large-glass.png" alt="Четкое изображение"/>
+                    <h3 class="loop text big-text">Общая информация о файле</h3> 
+                </article>
+
+                <article class="loop__area">
+                    <img class="loop small-loop" src="./assets/img/blurred-glass.png" alt="Размытое изображение"/>
+                    <h3 class="loop text small-text">Общая информация о файле</h3>
+                </article>
+            </div>
+
+            <div class="points__group">
+                <div class="point">
+                    <img class="point--icon" src="./assets/icons/marker.svg" alt="Иконка точки">
+                    <p class="point--text">Тип файла</p>
+                </div>
+                <div class="point">
+                    <img class="point--icon" src="./assets/icons/marker.svg" alt="Иконка точки">
+                    <p class="point--text">Дата создания и изменения</p>
+                </div>
+                <div class="point">
+                    <img class="point--icon" src="./assets/icons/marker.svg" alt="Иконка точки">
+                    <p class="point--text">Разрешение</p>
+                </div>
+                <div class="point">
+                    <img class="point--icon" src="./assets/icons/marker.svg" alt="Иконка точки">
+                    <p class="point--text">Размер</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Вторая страница (результаты анализа фотографии) -->
+    <main id="results" class="results page">
+        <section class="result-header">
+            <div>
+                <h1>Метаданные изображения</h1>
+                <button id="result-button">Скопировать JSON</button>
+            </div>
+
+            <article class="card">
+                <img id="gps" src="./assets/img/gps.png" alt="Отображение GPS изображения"/>
+                <img id="gps-title" src="./assets/icons/gps-title.svg" alt="Координаты"/>
+                <h2 class="card-title">GPS</h2>
+            </article>
+
+            <article class="card">
+                <img id="previewImage" src="" alt="Превью загруженного изображения"/>
+            </article>
+        </section>
+
+        <section class="meta-section">
+            <ul class="meta-info"></ul>
+
+            <div id="settingsSection">
+                <article class="settings">
+                    <h2 style="width: 21rem; padding-inline: 0.8rem; margin-inline: auto; ">Настройки съемки</h2>
+                    <div class="points__group points-settings"></div>
+                </article>
+
+                <article class="time">
+                    <h2>Временная информация</h2>
+                    <ul class="time-points"></ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="camera">
+            <h2 class="camera-title">Камера</h2>
+            <ul class="camera-points"></ul>
+        </section>
+    </main>
+
+    <div id="loader" class="loader">
+        <div class="loader-spin">
+            <p>Метаданные фотографии загружаются...</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <img class="footer__img" src="./assets/LOGO.svg" alt="Логотип"/>
+    </footer>
+    <script type="text/javascript" src="./lib/exif-reader.min.js"></script>
+    <script type="module" src="./src/app/app.js"></script>
+</body>
+</html>

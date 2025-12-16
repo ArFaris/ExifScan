@@ -1,0 +1,34 @@
+.features {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5.5rem;
+    justify-content: center;
+    margin-block: auto;
+    min-height: 100vh;
+}
+
+.features__header {
+    display: inline;
+    margin-inline: auto;
+    background: radial-gradient(
+                    circle at center,
+                    #b1e5a699 40%,
+                    #c7f6ca99 92%
+                );
+    padding: 0.125rem 3.6rem;
+    border-radius: var(--border-radius-lg);
+    margin-bottom: 2.5rem;
+    min-width: 34rem;
+    text-align: center;
+    font-size: var(--font-size-sm);
+}
+
+@media (max-width: 720px) {
+    .features__header {
+        margin-inline: 2rem;
+        margin-bottom: 7rem;
+        min-width: fit-content;
+        font-size: var(--font-size-4xl);
+    }
+}

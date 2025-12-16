@@ -1,0 +1,41 @@
+.button {
+    font-weight: 700;
+    line-height: 1.2;
+    font-size: var(--font-size-xs);
+    height: var(--button-height);
+    padding: var(--button-padding-y) var(--button-padding-x);
+    background: var(--button-gradient-primary);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.button--rounded {
+    border-radius: var(--border-radius-lg);
+    max-width: fit-content;
+}
+
+.button--pill {
+    border-radius: var(--border-radius);
+    width: 49%;
+}
+
+.button:not(:disabled):hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+.button--pill:disabled {
+    cursor: not-allowed;
+}
+
+@media (max-width: 720px) {
+    .button {
+        font-size: var(--font-size-3xl);
+        height: auto;
+    }
+
+    .button--pill {
+        width: 100%;
+        padding-block: 1rem;
+    }
+}

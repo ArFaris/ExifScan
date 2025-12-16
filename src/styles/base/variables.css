@@ -1,0 +1,75 @@
+:root {
+    /* Цвета */
+    --color-background: #f4f4f4;
+    --color-header: #000000;
+    --color-footer: #b1e5a6;
+    --text-dark: #2a3727;
+    --text-light: #efffeb;
+    --gradient-primary: #d3ffde;
+    --gradient-secondary: #c7f6ca;
+    --color-error: #8b1919;
+    --color-hover: #629e0eb1;
+
+    /* Размеры шрифта */
+    --font-family-primary: "Roboto", sans-serif;
+    --font-size-base: 1rem;      /* 16px */
+    --font-size-xs: 0.75rem;     /* 12px */
+    --font-size-sm: 0.875rem;    /* 14px */
+    --font-size-lg: 1.125rem;    /* 18px */
+    --font-size-xl: 1.25rem;     /* 20px */
+    --font-size-2xl: 1.5rem;     /* 24px */
+    --font-size-3xl: 2rem;       /* 32px */
+    --font-size-4xl: 2.5rem;     /* 40px */
+    --font-size-5xl: 3rem;       /* 48px */
+    
+    /* Кнопка */
+    --button-padding-y: 0.2rem;
+    --button-padding-x: 2rem;
+    --button-gradient-primary: radial-gradient(
+        circle at center,
+        var(--color-footer) 40%,
+        var(--gradient-secondary) 92%
+    );
+    --button-height: 1.6rem;
+
+    /* Хедер */
+    --header-height: 2.5rem;
+    --header-padding-r: 9rem;
+    --header-image-height: 1.75rem;
+    --header-gradient: radial-gradient(
+        circle at center,
+        rgba(42, 55, 39, 0.25) 40%,
+        rgba(199, 246, 202, 0.25) 92%
+    )
+
+    /* Изображения */
+    --image-filter: drop-shadow(0 3px 7px rgba(0, 0, 0, 0.1));
+    --image-filter-hover: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2))
+                          drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
+
+    /* Градиент */
+    --upload-gradient-primary: radial-gradient(
+        circle at center,
+        var(--color-footer) 0%,
+        var(--gradient-primary) 100%
+    );
+    --upload-gradient-secondary: radial-gradient(
+        circle at center,
+        var(--gradient-secondary) 4%,
+        var(--text-dark) 70%
+    );
+
+    /* Отступы */
+    --padding-l: 5.5625rem;
+
+    /* Радиус скругления */
+    --border-radius: 10px;
+    --border-radius-lg: 25px;
+
+    /* Тень */
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.15);
+
+    /* Transition */
+    --transition:  all 0.3s ease;
+}

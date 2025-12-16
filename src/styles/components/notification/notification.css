@@ -1,0 +1,36 @@
+.notification {
+    position: fixed;
+    top: 4.375rem;
+    right: 5rem;
+    padding: 16px 24px;
+    border-radius: var(--border-radius-lg);
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    z-index: 1003;
+    box-shadow: var(--box-shadow-lg);
+    
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+.notification--error {
+    color: var(--color-error);
+    background-color: rgb(139, 25, 25, 0.5);
+    border: 1px solid var(--color-error);
+}
+
+.notification--success {
+    background-color: #4CAF50;
+    border: 1px solid #43A047;
+}
+
+/* Анимация выезда справа */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}

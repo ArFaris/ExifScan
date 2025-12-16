@@ -1,0 +1,29 @@
+.file-input-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+    height: 2rem;
+    background-color: var(--text-dark);
+    box-shadow: var(--shadow-lg);
+    border-radius: var(--border-radius);
+    color: var(--text-light);
+    font-size: var(--font-size-xs);
+    cursor: pointer;
+    margin-top: 4.5rem;
+    transition: var(--transition);
+}
+
+.file-input-label:hover {
+    background-color: var(--color-hover);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 720px) {
+    .file-input-label {
+        width: auto;
+        height: auto;
+        font-size: var(--font-size-3xl);
+        padding: 2rem;
+    }
+}
