@@ -1,0 +1,29 @@
+{
+  "name": "exifscan",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "type": "module",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --config ./jest.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArFaris/ExifScan.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArFaris/ExifScan/issues"
+  },
+  "homepage": "https://github.com/ArFaris/ExifScan#readme",
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "jest-environment-jsdom": "^30.2.0"
+  }
+}
+
