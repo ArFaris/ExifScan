@@ -23,14 +23,25 @@
     z-index: -1; 
 }
 
-@media (max-width: 720px) {
-    .image-preview__photo {
-        height: 40rem;
-        bottom: 0;
+@media(max-width: 350px) {
+    .image-preview {
+        max-width: fit-content;
     }
 
     .image-preview__decoration {
-        width: 35rem;
-        top: 28rem;
+        display: none;
+    }
+}
+
+@media(max-width: 576px) and (min-width: 421px) {
+    .image-preview {
+        min-width: calc(100vw - 45vw - 8.5rem);
+    }
+}
+
+@media(max-width: 420px) and (min-width: 351px) {
+    .image-preview {
+        min-width: calc(100vw - 45vw - 4rem);
+        top: 7rem;
     }
 }

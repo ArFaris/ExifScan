@@ -25,3 +25,18 @@
 .camera-point {
     background: none;
 }
+
+@media(max-width: 576px) and (min-width: 351px) {
+    .camera {
+        width: calc(100vw - 5rem);
+        margin-inline: 2.5rem;
+    }
+}
+
+@media(max-width: 350px) {
+    .camera {
+        width: calc(100vw - 2rem);
+        padding-inline: 1rem;
+        margin-inline: 1rem;
+    }
+}

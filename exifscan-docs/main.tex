@@ -1,0 +1,274 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{booktabs}
+
+\geometry{
+    a4paper,
+    left=25mm,
+    right=15mm,
+    top=20mm,
+    bottom=20mm
+}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    
+    {\Huge\textbf{EXIFSCAN}}\\[0.5cm]
+    {\Large Анализатор метаданных фотографий}\\[1cm]
+    
+    \vspace{1cm}
+    {\Huge\textbf{Документация и руководство пользователя}}\\[0.5cm]
+    
+    \vspace{1.5cm}
+    {\large Выполнила: Фарисеева Арина Дмитриевна}\\
+    {\large Группа: ИКБО-31-24}\\
+    {\large Дата: \today}\\
+    
+    \vfill
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+\section{Введение}
+ExifScan — веб-приложение для анализа метаданных цифровых фотографий в формате EXIF (Exchangeable Image File Format). Приложение позволяет извлекать информацию о параметрах съемки, оборудовании и геолокации из цифровых изображений.
+
+\section{Установка и запуск}
+
+\subsection{Требования}
+\begin{itemize}
+    \item Браузер: Chrome 90+, Firefox 88+, Edge 90+ (с поддержкой File API)
+    \item Node.js версии 16+ (для тестирования и разработки)
+    \item Git для клонирования репозитория
+\end{itemize}
+
+\subsection{Шаги установки}
+\begin{enumerate}
+    \item Клонирование репозитория:
+    
+    \texttt{git clone https://github.com/ArFaris/ExifScan.git}
+    
+    \texttt{cd ExifScan}
+
+    \item Установка зависимостей:
+    
+    \texttt{npm install}
+
+    \item Запуск тестов:
+    
+    \texttt{npm test}
+
+    \item Запуск локального сервера:
+    
+    \texttt{python -m http.server 8000}
+    
+    или
+    
+    \texttt{npx serve .}
+\end{enumerate}
+
+\section{UML-диаграммы}
+
+На рисунке \ref{fig:class-diagram} представлена диаграмма классов приложения ExifScan, показывающая взаимосвязи между основными компонентами системы.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../assets/img/doc/image.png}
+    \caption{Диаграмма классов приложения ExifScan}
+    \label{fig:class-diagram}
+\end{figure}
+
+На рисунке \ref{fig:use-case-diagram} показана диаграмма вариантов использования, иллюстрирующая взаимодействие пользователя с системой.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../assets/img/doc/image-1.png}
+    \caption{Диаграмма вариантов использования ExifScan}
+    \label{fig:use-case-diagram}
+\end{figure}
+
+\section{Руководство пользователя}
+
+\subsection{Интерфейс приложения}
+\begin{enumerate}
+    \item Зона загрузки файлов с поддержкой Drag\&Drop
+    \item Кнопка выбора файла через диалоговое окно
+    \item Кнопка анализа метаданных
+    \item Область отображения результатов, сгруппированных по категориям
+\end{enumerate}
+
+\subsection{Шаги работы}
+\begin{enumerate}
+    \item Загрузите JPEG или PNG файл (до 10 МБ)
+    \item Нажмите кнопку "Получить метаданные"
+    \item Просмотрите результаты, сгруппированные по категориям:
+    \begin{itemize}
+        \item Информация о камере
+        \item Настройки съемки
+        \item Временные метки
+        \item GPS координаты (если доступны)
+        \item Техническая информация о файле
+    \end{itemize}
+\end{enumerate}
+
+\section{Документация frontend-компонентов}
+
+\subsection{ExifParser}
+Основной класс для извлечения EXIF метаданных. Реализует паттерн "Модель" в архитектуре MVC приложения ExifScan.
+
+\texttt{const parser = new ExifParser(file);}
+
+\texttt{const metadata = await parser.parse();}
+
+\begin{verbatim}
+// Структура возвращаемых данных
+{
+    camera: { ... },      // Камера и объектив
+    settings: { ... },    // Настройки съемки  
+    time: { ... },        // Даты и время
+    gps: { ... },         // Координаты
+    fileInfo: { ... }     // Технические данные файла
+}
+\end{verbatim}
+
+\subsection{UploadManager}
+Управление загрузкой файлов, реализует валидацию и обработку событий Drag\&Drop.
+
+\begin{verbatim}
+class UploadManager {
+    validateFile(file) {
+        // Проверка типа и размера файла
+        // Поддерживаются JPEG/PNG до 10 МБ
+    }
+    
+    handleDrop(e) {
+        // Обработка события перетаскивания файла
+    }
+
+    async analyzeFile() {
+        // Координация процесса анализа метаданных
+    }
+}
+\end{verbatim}
+
+\section{Структура проекта}
+
+В таблице \ref{tab:project-structure} представлена структура проекта ExifScan.
+
+\begin{table}[H]
+\centering
+\caption{Структура проекта ExifScan}
+\label{tab:project-structure}
+\begin{tabular}{|l|p{0.7\textwidth}|}
+\hline
+\textbf{Файл/Папка} & \textbf{Назначение} \\ 
+\hline
+index.html & Главная страница приложения \\ 
+\hline
+src/app.js & Основной скрипт приложения \\ 
+\hline
+src/managers/ & Менеджеры приложения (Upload, UI, Display, Page) \\ 
+\hline
+src/parsers/ExifParser.js & Парсер EXIF метаданных \\ 
+\hline
+assets/ & Статические ресурсы (иконки, изображения) \\ 
+\hline
+README.md & Основная документация проекта \\ 
+\hline
+package.json & Конфигурация npm и зависимости \\ 
+\hline
+jest.config.js & Конфигурация тестового фреймворка Jest \\ 
+\hline
+\end{tabular}
+\end{table}
+
+\section{Тестирование}
+
+\subsection{Тестовая конфигурация}
+\begin{verbatim}
+// jest.config.js
+export default {
+    testEnvironment: 'jsdom',
+    transform: {} 
+};
+\end{verbatim}
+
+\subsection{Запуск тестов}
+\texttt{npm test}
+
+\section{Библиография}
+
+\begin{thebibliography}{9}
+
+\bibitem{exif-standard} 
+Japan Electronics and Information Technology Industries Association (JEITA). 
+\emph{Exchangeable image file format for digital still cameras: Exif Version 2.32}. 
+Standard CP-3451C, 2019.
+
+\bibitem{exifreader-library}
+Wallander, M.
+\emph{ExifReader: A JavaScript library for reading EXIF metadata from image files}. 
+GitHub repository, 2023. 
+Доступно: \url{https://github.com/mattiasw/ExifReader}
+
+\bibitem{javascript-guide}
+Flanagan, D.
+\emph{JavaScript: The Definitive Guide}. 
+7-е изд., O'Reilly Media, 2020.
+
+\bibitem{web-file-api}
+World Wide Web Consortium (W3C).
+\emph{File API Specification}. 
+W3C Working Draft, 2021. 
+Доступно: \url{https://www.w3.org/TR/FileAPI/}
+
+\bibitem{jest-docs}
+Meta Open Source.
+\emph{Jest: Delightful JavaScript Testing}. 
+Документация, 2023. 
+Доступно: \url{https://jestjs.io/}
+
+\bibitem{uml-specification}
+Object Management Group (OMG).
+\emph{Unified Modeling Language (OMG UML) Version 2.5.1}. 
+OMG Document Number: formal/2017-12-05, 2017.
+
+\bibitem{latex-companion}
+Mittelbach, F., Goossens, M.
+\emph{The LaTeX Companion}. 
+2-е изд., Addison-Wesley, 2004.
+
+\bibitem{mvc-pattern}
+Gamma, E., Helm, R., Johnson, R., Vlissides, J.
+\emph{Design Patterns: Elements of Reusable Object-Oriented Software}. 
+Addison-Wesley, 1994.
+
+\end{thebibliography}
+
+\section{Заключение}
+
+ExifScan предоставляет удобный интерфейс для анализа EXIF метаданных фотографий. Приложение обладает следующими преимуществами:
+
+\begin{itemize}
+    \item \textbf{Простота использования}: Интуитивно понятный интерфейс с поддержкой Drag\&Drop
+    \item \textbf{Кросс-платформенность}: Работает в любом современном браузере
+    \item \textbf{Модульность архитектуры}: Четкое разделение ответственности между компонентами
+    \item \textbf{Полная документация}: Включая техническую документацию и руководство пользователя
+    \item \textbf{Открытый исходный код}: Проект доступен на GitHub для изучения и улучшения
+\end{itemize}
+
+Приложение успешно решает задачу извлечения и анализа EXIF метаданных, предоставляя пользователям ценную информацию о параметрах съемки и технических характеристиках цифровых фотографий.
+
+\end{document}

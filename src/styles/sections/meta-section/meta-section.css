@@ -1,7 +1,6 @@
 .meta-section {
     width: 34rem;
     display: flex;
-    flex-direction: row;
     gap: 2.4rem;
     margin-bottom: 2.5rem;
     margin-inline: auto;
@@ -18,4 +17,25 @@
     font-size: var(--font-size-xs);
     margin-bottom: 1.4rem;
     padding-right: 0.8rem;
+}
+
+@media(max-width: 576px) and (min-width: 351px) {
+    .meta-section {
+        width: calc(100vw - 5rem);
+        margin-inline: 2.5rem;
+    }
+}
+
+@media(max-width: 350px) {
+    .meta-section {
+        flex-direction: column;
+        width: auto;
+    }
+
+    .meta-info {
+        width: calc(100vw - 2rem);
+        margin-inline: 1rem;
+        max-height: 50vw;
+        overflow-x: scroll;
+    }
 }

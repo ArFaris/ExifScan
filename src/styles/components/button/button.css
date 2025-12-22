@@ -28,14 +28,20 @@
     cursor: not-allowed;
 }
 
-@media (max-width: 720px) {
-    .button {
-        font-size: var(--font-size-3xl);
-        height: auto;
-    }
-
+@media (max-width: 350px) {
     .button--pill {
         width: 100%;
-        padding-block: 1rem;
+    }
+}
+
+@media(max-width: 320px) {
+    .button--rounded {
+        padding-inline: 1rem;
+    }
+}
+
+@media(max-width: 275px) {
+    .button--rounded {
+        padding-inline: 0.4rem;
     }
 }

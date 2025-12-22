@@ -1,0 +1,18 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Введение}{2}{section.1}%
+\contentsline {section}{\numberline {2}Установка и запуск}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Требования}{2}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Шаги установки}{2}{subsection.2.2}%
+\contentsline {section}{\numberline {3}UML-диаграммы}{2}{section.3}%
+\contentsline {section}{\numberline {4}Руководство пользователя}{3}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Интерфейс приложения}{3}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Шаги работы}{4}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Документация frontend-компонентов}{4}{section.5}%
+\contentsline {subsection}{\numberline {5.1}ExifParser}{4}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}UploadManager}{4}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Структура проекта}{5}{section.6}%
+\contentsline {section}{\numberline {7}Тестирование}{5}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Тестовая конфигурация}{5}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Запуск тестов}{5}{subsection.7.2}%
+\contentsline {section}{\numberline {8}Библиография}{5}{section.8}%
+\contentsline {section}{\numberline {9}Заключение}{6}{section.9}%

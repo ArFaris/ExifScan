@@ -30,6 +30,8 @@ ExifScan - это веб-приложение для анализа метада
 
 **Цель проекта:** Создать удобный и функциональный инструмент для извлечения и визуализации EXIF метаданных без установки дополнительного программного обеспечения.
 
+[![GitHub Pages](https://img.shields.io/badge/Live_Demo-GitHub_Pages-blue?style=for-the-badge&logo=github)](https://arfaris.github.io/ExifScan/)
+
 ---
 
 ## Основные возможности
@@ -193,3 +195,30 @@ http://localhost:8000
 ```bash
 npm test
 ```
+# Документация ExifScan в LaTeX
+
+Данный проект содержит пользовательскую документацию и техническую документацию для приложения ExifScan, собранную с использованием LaTeX.
+
+## Требования
+
+Для сборки документации требуется:
+
+1. **LaTeX дистрибутив**:
+   - TeX Live (рекомендуется)
+   - MiKTeX (для Windows)
+   - MacTeX (для macOS)
+
+2. **Базовые пакеты**:
+   - texlive-latex-base
+   - texlive-latex-extra
+   - texlive-lang-cyrillic
+   - texlive-fonts-recommended
+
+## Установка зависимостей
+
+### Ubuntu/Debian:
+```bash
+sudo apt-get update
+sudo apt-get install texlive-latex-base texlive-latex-extra \
+texlive-lang-cyrillic texlive-fonts-recommended \
+pdflatex make

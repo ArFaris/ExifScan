@@ -5,3 +5,16 @@
 .points-settings {
     max-width: 100%;
 }
+
+@media(max-width: 420px) and (min-width: 351px) {
+    .settings {
+        width: 45vw;
+    }
+}
+
+@media(max-width: 350px) {
+    .settings {
+        width: calc(100vw - 2rem);
+        margin-inline: 1rem;
+    }
+}

@@ -19,3 +19,16 @@
     font-size: var(--font-size-xs);
     padding: 0.5rem;
 }
+
+@media(max-width: 420px) and (min-width: 351px) {
+    .time {
+        width: 45vw;
+    }
+}
+
+@media(max-width: 350px) {
+    .time {
+        width: calc(100vw - 2rem);
+        margin-inline: 1rem;
+    }
+}

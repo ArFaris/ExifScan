@@ -30,8 +30,8 @@
     color: var(--color-hover);
 }
 
-@media (max-width: 720px) {
+@media(max-width: 576px) {
     .footer {
-        height: 5rem;
+        padding-left: 1rem;
     }
 }

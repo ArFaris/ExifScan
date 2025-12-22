@@ -18,12 +18,3 @@
     background-color: var(--color-hover);
     transform: translateY(-1px);
 }
-
-@media (max-width: 720px) {
-    .file-input-label {
-        width: auto;
-        height: auto;
-        font-size: var(--font-size-3xl);
-        padding: 2rem;
-    }
-}

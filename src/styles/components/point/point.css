@@ -33,22 +33,3 @@
     gap: 0.75rem;
     margin-bottom: 2rem;
 }
-
-@media (max-width: 720px) {
-    .point {
-        height: auto;
-        gap: 1.5rem;
-        padding-inline: 1.5rem;
-    }
-    .point--text {
-        font-size: var(--font-size-3xl);
-    }
-
-    .point--icon {
-        height: 3.5rem;
-    }
-
-    .points__group {
-        max-width: 100%;
-    }
-}

@@ -25,13 +25,8 @@
     height: var(--header-image-height);
 }
 
-@media (max-width: 720px) {
+@media (max-width: 576px) {
     .header {
-        padding: 2rem;
-        height: auto;
-    }
-
-    .header__logo {
-        height: 5rem;
+        padding: 1rem;
     }
 }
