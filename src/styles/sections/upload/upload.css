@@ -54,13 +54,13 @@
     width: 100%;
 }
 
-@media(max-width: 576px) {
+@media(max-width: 1024px) and (orientation: portrait) {
     .upload-container {
         margin-inline: 2rem;
     }
 }
 
-@media(max-width: 350px) {
+@media(max-width: 431px) {
     .upload__actions {
         flex-direction: column;
         bottom: -4.3rem;
@@ -69,7 +69,7 @@
     }
 }
 
-@media(max-width: 320px) {
+@media(max-width: 431px) {
     .upload__title {
         text-align: center;
         margin-bottom: 1rem;

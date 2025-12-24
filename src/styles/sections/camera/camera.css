@@ -26,14 +26,14 @@
     background: none;
 }
 
-@media(max-width: 576px) and (min-width: 351px) {
+@media(max-width: 1024px) and (min-width: 431px) and (orientation: portrait) {
     .camera {
         width: calc(100vw - 5rem);
         margin-inline: 2.5rem;
     }
 }
 
-@media(max-width: 350px) {
+@media(max-width: 431px) {
     .camera {
         width: calc(100vw - 2rem);
         padding-inline: 1rem;

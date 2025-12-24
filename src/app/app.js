@@ -2,7 +2,7 @@ import { UploadManager } from './managers/uploadManager.js';
 import { UIManager } from './managers/uiManager.js';
 import { DisplayManager } from './managers/displayManager.js';
 
-class ExifScanApp {
+export default class ExifScanApp {
     constructor() {
         this.uiManager = new UIManager();
         this.displayManager = new DisplayManager(this.uiManager);

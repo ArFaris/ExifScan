@@ -30,7 +30,7 @@
     color: var(--color-hover);
 }
 
-@media(max-width: 576px) {
+@media(max-width: 1024px) and (orientation: portrait) {
     .footer {
         padding-left: 1rem;
     }

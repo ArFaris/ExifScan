@@ -28,19 +28,19 @@
     cursor: not-allowed;
 }
 
-@media (max-width: 350px) {
+@media (max-width: 431px) {
     .button--pill {
         width: 100%;
     }
 }
 
-@media(max-width: 320px) {
+@media(max-width: 431px) {
     .button--rounded {
         padding-inline: 1rem;
     }
 }
 
-@media(max-width: 275px) {
+@media(max-width: 320px) {
     .button--rounded {
         padding-inline: 0.4rem;
     }

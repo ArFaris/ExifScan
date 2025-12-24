@@ -78,38 +78,44 @@ body.dark {
     100% { transform: rotate(360deg) };
 }
 
+@media(max-width: 1024px) and (orientation: portrait) {
+    html {
+        font-size: 3vw;
+    }
+}
+
 /* Планшеты и большие мобильные */
 @media (max-width: 768px) {
     html {
-        font-size: 2vw; /* было 2vw */
+        font-size: 3vw; /* было 2vw */
     }
 }
 
 /* Средние мобильные - УВЕЛИЧИВАЕМ */
 @media (max-width: 576px) { /* добавляем промежуточный */
     html {
-        font-size: 2.8vw;
+        font-size: 3vw;
     }
 }
 
 /* Малые мобильные - портрет */
-@media (max-width: 420px) and (orientation: portrait) {
+@media (max-width: 576px) and (orientation: portrait) {
     html {
-        font-size: 3.3vw; /* было 2.7vw */
+        font-size: 5vw; /* было 2.7vw */
     }
 }
 
 /* Малые мобильные - ландшафт */
-@media (max-width: 420px) and (orientation: landscape) {
+@media (max-width: 576px) and (orientation: landscape) {
     html {
-        font-size: 2.5vw;
+        font-size: 3.3vw;
     }
 }
 
 /* Очень маленькие - защита минимума */
 @media (max-width: 350px) {
     html {
-        font-size: max(3.8vw, 14px); /* было 3.3vw + защита */
+        font-size: max(5.5vw, 14px); /* было 3.3vw + защита */
     }
 }
 

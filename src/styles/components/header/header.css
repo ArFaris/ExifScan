@@ -25,7 +25,7 @@
     height: var(--header-image-height);
 }
 
-@media (max-width: 576px) {
+@media (max-width: 1024px)and (orientation: portrait) {
     .header {
         padding: 1rem;
     }

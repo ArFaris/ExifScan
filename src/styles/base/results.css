@@ -49,21 +49,21 @@
     margin-block: auto;
 }
 
-@media(max-width: 576px) and (min-width: 351px) {
+@media(max-width: 1024px) and (min-width: 577px) and (orientation: portrait) {
     .result-header {
         width: calc(100vw - 5rem);
         gap: 1rem;
     }
 }
 
-@media(max-width: 420px) {
+@media(max-width: 576px) {
     .result-header {
         flex-wrap: wrap;
         justify-content: center;
     }
 }
 
-@media(max-width: 350px) {
+@media(max-width: 430px) {
     .result-header {
         width: calc(100vw - 2rem);
         gap: 1rem;

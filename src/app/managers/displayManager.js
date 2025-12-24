@@ -10,7 +10,13 @@ export class DisplayManager {
         }
         this.json = null;
         this.jsonButton = document.getElementById('result-button');
-        this.jsonButton.removeEventListener('cllick', this.downloadJson.bind(this))
+        this.jsonButton.removeEventListener('click', this.downloadJson.bind(this));
+        
+        this.jsonButton.removeEventListener('click', this.copyJsonBound);
+        this.copyJsonBound = this.copyJsonToClipboard.bind(this);
+        this.jsonButton.addEventListener('click', this.copyJsonBound);
+        
+        this.jsonButton.textContent = 'Копировать JSON';
     }
 
     displayExifData(data) { 
@@ -26,11 +32,11 @@ export class DisplayManager {
                 this.uiManager[uiMethod](strings);
             }
         }
-        this.json = JSON.stringify(data);
+        this.json = JSON.stringify(data, null, 2);
 
-        this.jsonButton.removeEventListener('click', this.downloadJsonBound);
-        this.downloadJsonBound = this.downloadJson.bind(this);
-        this.jsonButton.addEventListener('click', this.downloadJson.bind(this));
+        this.jsonButton.removeEventListener('click', this.copyJsonBound);
+        this.copyJsonBound = this.copyJsonToClipboard.bind(this);
+        this.jsonButton.addEventListener('click', this.copyJsonBound);
     }
 
     resetData() {
@@ -41,13 +47,71 @@ export class DisplayManager {
         this.uiManager.showTimeInfo(null);
         this.uiManager.showGeneralInfo(null);
         
-        this.jsonButton.removeEventListener('click', this.downloadJsonBound);
-        this.downloadJsonBound = null;
+        this.jsonButton.removeEventListener('click', this.copyJsonBound);
+        this.copyJsonBound = null;
+    }
+
+    copyJsonToClipboard() {
+        if (!this.json) {
+            this.uiManager.showError('JSON отсутствует');
+            return;
+        }
+
+        navigator.clipboard.writeText(this.json)
+            .then(() => {
+                this.uiManager.showNotification('JSON скопирован в буфер обмена!');
+                
+                const originalText = this.jsonButton.textContent;
+                this.jsonButton.textContent = 'Скопировано!';
+                
+                setTimeout(() => {
+                    this.jsonButton.textContent = originalText;
+                }, 2000);
+            })
+            .catch(err => {
+                console.error('Ошибка при копировании: ', err);
+                this.uiManager.showError('Не удалось скопировать JSON');
+                
+                this.fallbackCopyTextToClipboard(this.json);
+            });
+    }
+
+    fallbackCopyTextToClipboard(text) {
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.left = '-999999px';
+        textArea.style.top = '-999999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        
+        try {
+            const successful = document.execCommand('copy');
+            if (successful) {
+                this.uiManager.showNotification('JSON скопирован в буфер обмена!');
+                
+                const originalText = this.jsonButton.textContent;
+                this.jsonButton.textContent = 'Скопировано!';
+                
+                setTimeout(() => {
+                    this.jsonButton.textContent = originalText;
+                }, 2000);
+            } else {
+                this.uiManager.showError('Не удалось скопировать JSON');
+            }
+        } catch (err) {
+            console.error('Ошибка при копировании: ', err);
+            this.uiManager.showError('Не удалось скопировать JSON');
+        }
+        
+        document.body.removeChild(textArea);
     }
 
     downloadJson() {
         if (!this.json) {
             this.uiManager.showError('JSON отсутствует');
+            return;
         }
 
         this.uiManager.downloadJson(this.json);

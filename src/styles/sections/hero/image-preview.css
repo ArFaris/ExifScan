@@ -23,7 +23,7 @@
     z-index: -1; 
 }
 
-@media(max-width: 350px) {
+@media(max-width: 431px) {
     .image-preview {
         max-width: fit-content;
     }
@@ -33,13 +33,13 @@
     }
 }
 
-@media(max-width: 576px) and (min-width: 421px) {
+@media(max-width: 1024px) and (min-width: 577px) and (orientation: portrait) {
     .image-preview {
         min-width: calc(100vw - 45vw - 8.5rem);
     }
 }
 
-@media(max-width: 420px) and (min-width: 351px) {
+@media(max-width: 1024px) and (min-width: 431px) and (orientation: portrait) {
     .image-preview {
         min-width: calc(100vw - 45vw - 4rem);
         top: 7rem;
